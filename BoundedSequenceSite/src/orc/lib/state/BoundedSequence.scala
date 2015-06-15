@@ -271,7 +271,7 @@ class BoundedSequenceInstance(val size: Int) extends TotalSite1 {
     assertClassInvariants()
     closed = true
     blockedWrites.dequeueAll(_ => true).map(_._2.halt)
-    openReadPoints map {rp => if (rp.readIndex == nextWriteIndex) rp.close() }
+    openReadPoints map { rp => if (rp.readIndex == nextWriteIndex) rp.close() }
     if (available == size) {
       closer.publish()
       cleanUpAtClose()
@@ -296,7 +296,7 @@ class BoundedSequenceInstance(val size: Int) extends TotalSite1 {
     assertClassInvariants()
     closed = true
     blockedWrites.dequeueAll(_ => true).map(_._2.halt)
-    openReadPoints map {rp => if (rp.readIndex == nextWriteIndex) rp.close() }
+    openReadPoints map { rp => if (rp.readIndex == nextWriteIndex) rp.close() }
     closer.publish()
     assertClassInvariants()
   }
@@ -306,10 +306,10 @@ class BoundedSequenceInstance(val size: Int) extends TotalSite1 {
     for {
       i <- store.indices
     } store(i) = null
-    assert (blockedReads.isEmpty)
-    assert (blockedWrites.isEmpty)
-    assert (blockedCloses.isEmpty)
-    assert (openReadPoints.isEmpty)
+    assert(blockedReads.isEmpty)
+    assert(blockedWrites.isEmpty)
+    assert(blockedCloses.isEmpty)
+    assert(openReadPoints.isEmpty)
   }
 
   override def eval(arg: AnyRef) = {
