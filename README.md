@@ -1,2 +1,0 @@
-# BoundedSequenceSite
-Orc BoundedSequence site
