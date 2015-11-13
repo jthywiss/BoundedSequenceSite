@@ -12,15 +12,11 @@
 //
 package orc.lib.state
 
-import scala.BigInt
-import scala.util.parsing.input.Position
-
 import orc.Handle
 import orc.error.runtime.{ ArgumentTypeMismatchException, NoSuchMemberException }
-import orc.lib.builtin.structured.ListType
 import orc.types.{ BooleanType, FunctionType, Invariant, NumberType, RecordType, SignalType, SimpleFunctionType, SimpleTypeConstructor, Top, TupleType, Type, TypeVariable }
 import orc.values.{ Field, OrcTuple, Signal }
-import orc.values.sites.{ PartialSite0, Site0, Site1, TotalSite0, TotalSite1, TypedSite }
+import orc.values.sites.{ Site0, Site1, TotalSite0, TotalSite1, TypedSite }
 
 /** Orc constructor site for the BoundedSequence class
   *
